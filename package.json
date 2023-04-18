@@ -1,10 +1,10 @@
 {
-  "name": "super-fransktein",
-  "version": "0.1.0",
+  "name": "my-webpack-project",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "webpack --mode=production --node-env=production",
     "start": "next start",
     "lint": "next lint",
     "build2": "./node_modules/.bin/babel --out-dir bin src",
@@ -19,7 +19,11 @@
     "web dev": "webpack --mode=development",
     "web prod": "webpack --mode=production --node-env=production",
     " web watch": "webpack --watch",
-    "clear": "rimraf lib"
+    "clear": "rimraf lib",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch",
+    "serve": "webpack serve"
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -36,6 +40,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@webpack-cli/generators": "^3.0.1",
     "babel-cli": "^6.26.0",
     "babel-loader": "^9.1.2",
     "husky": "^8.0.0",
@@ -43,5 +48,6 @@
     "prettier": "^2.8.7",
     "promise": "^8.3.0",
     "rimraf": "^5.0.0"
-  }
+  },
+  "description": "My webpack project"
 }
