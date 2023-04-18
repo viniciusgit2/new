@@ -1,0 +1,47 @@
+{
+  "name": "super-fransktein",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build2": "./node_modules/.bin/babel --out-dir bin src",
+    "tdd": "./node_modules/.bin/mocha /**/* music/mocha/testes/.spec.js --watch",
+    " web serve": "webpack server",
+    "prepare": "husky install",
+    "build3": "./node_modules/.bin/babel --out-dir lib src",
+    "build4": "./node_modules/.bin/webpack --output-filename  music.umd.js --mode=production ",
+    "build5": "./node_modules/.bin/webpack --output-filename  music.umd.min.js --mode=production ",
+    "build6": "yarn build2 && yarn build3 && yarn build4",
+    "build7": "./node_modules/.bin/webpack server --mode=development ",
+    "web dev": "webpack --mode=development",
+    "web prod": "webpack --mode=production --node-env=production",
+    " web watch": "webpack --watch",
+    "clear": "rimraf lib"
+  },
+  "dependencies": {
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.35",
+    "@types/react-dom": "18.0.11",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.38.0",
+    "eslint-config-next": "13.3.0",
+    "next": "13.3.0",
+    "postcss": "8.4.21",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.1",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^9.1.2",
+    "husky": "^8.0.0",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.7",
+    "promise": "^8.3.0",
+    "rimraf": "^5.0.0"
+  }
+}
