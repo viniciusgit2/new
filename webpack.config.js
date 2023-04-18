@@ -1,6 +1,8 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const path = require("path");
+const join=path
+const include= join(path.dirname , `src`)
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
@@ -58,6 +60,11 @@ const config = {
 };
 
 module.exports = () => {
+ // fiz algumas altreracoes mas pouca nesse webpack
+
+
+
+
   if (isProduction) {
     config.mode = "production";
 
@@ -67,3 +74,17 @@ module.exports = () => {
   }
   return config;
 };
+module .exports={
+    entry:`src`,
+    output:{
+        path:join(__dirname,`dist`)
+    ,librarytarget:`umd`,
+    library:`music`
+    },
+devtool:`source-map`,
+module:{
+    loader:[
+        {test:/\:js/, loader:`babel-loader`,include}
+    ]
+}
+}
